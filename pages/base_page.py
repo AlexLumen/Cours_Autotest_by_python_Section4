@@ -13,6 +13,12 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    #Открыть корзину
+    def go_to_basket(self):
+        button_view_basket = self.browser.find_element(*BasePageLocators.VIEW_BASKET)
+        button_view_basket.click()
+
+    #Открыть страницу логина
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
@@ -46,6 +52,8 @@ class BasePage():
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
+
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
@@ -59,3 +67,4 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
