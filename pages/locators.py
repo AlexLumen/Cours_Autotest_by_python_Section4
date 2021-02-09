@@ -16,3 +16,4 @@ class ProductPageLocators():
     ALERT_ADDED_PRODUCT = (By.CSS_SELECTOR, '#messages >.fade.in:nth-child(1)>.alertinner')
     PRODUCT_NAME_IN_MESSAGE = (By.CSS_SELECTOR, '#messages >.fade.in:nth-child(1)>.alertinner>strong')
     PRODUCT_PRICE_IN_BASKET = (By.CSS_SELECTOR, '.alertinner > p > strong')
+    ALERT_PRICE_MESSAGES = (By.CSS_SELECTOR, '.alert-info.fade.in> .alertinner')
