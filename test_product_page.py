@@ -4,7 +4,7 @@ from .pages.product_page import ProductPage
 from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 from .pages.base_page import BasePage
-link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=offer0"
 @pytest.mark.need_review
 @pytest.mark.parametrize('link', ["coders-at-work_207/?promo=offer0",
                                   "coders-at-work_207/?promo=offer1",
@@ -16,7 +16,7 @@ link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook
                                   "coders-at-work_207/?promo=offer8",
                                   "coders-at-work_207/?promo=offer9",
                                   pytest.param("coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail)])
-def test_guest_can_add_product_to_basket(browser, link):
+def test_guest_can_add_product_to_basket(browser,link):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/{link}"
     page = ProductPage(browser, link)
     page.open()
